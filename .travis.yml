@@ -4,11 +4,12 @@ cache:
   packages: true
   directories:
   - $HOME/.npm
-  - data
+  - downloaded_data
 
 before_install:
 - npm install netlify-cli -g
-- mkdir data
+- ls -ltrh
+- mkdir -p downloaded_data
 
 install:
 - curl -d "j_username=jeff.hammerbacher%40gmail.com&j_password=password" http://software.broadinstitute.org/gsea/j_spring_security_check -c - | curl -b @- -o data/msigdb.xml http://software.broadinstitute.org/gsea/msigdb/download_file.jsp?filePath=/resources/msigdb/6.2/msigdb_v6.2.xml
