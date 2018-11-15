@@ -8,6 +8,7 @@ before_install:
 
 script:
 - Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
+- ls -ltrhR _book
 
 after_success:
 - netlify deploy --prod --dir _book
